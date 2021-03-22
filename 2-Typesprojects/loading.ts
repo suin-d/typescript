@@ -20,7 +20,7 @@
 
   type ResourceLoadState = LoadingState | SuccessState | FailState;
 
-  function printLoginStateThird(loadState: ResourceLoadState) {
+  function printLoginState(loadState: ResourceLoadState) {
     switch (loadState.state) {
       case 'loading': {
         console.log(`👀 ${loadState.state}...`);
@@ -39,7 +39,7 @@
     }
   }
 
-  printLoginStateThird({ state: 'loading' }); // 👀 loading...
-  printLoginStateThird({ state: 'success', response: { body: 'loaded' } }); // 😃 loaded
-  printLoginStateThird({ state: 'fail', reason: 'no network' }); // 😱 no network
+  printLoginState({ state: 'loading' }); // 👀 loading...
+  printLoginState({ state: 'success', response: { body: 'loaded' } }); // 😃 loaded
+  printLoginState({ state: 'fail', reason: 'no network' }); // 😱 no network
 }
